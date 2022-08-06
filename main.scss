@@ -1,0 +1,592 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+
+    .header {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 8vw;
+        background: linear-gradient(rgba(0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0));
+        color: cornflowerblue;
+
+        .left {
+            .logo {
+                font-size: 2vw;
+                color: rgb(244, 239, 199);
+            }
+
+            nav {
+                position: absolute;
+                top: 0;
+                right: -15vw !important;
+                width: 15vw;
+                background-color: black;
+                height: 100vw;
+                padding: 2vw 2vw;
+                transition: 1000ms all;
+
+                .H-ul {
+                    position: relative;
+
+                    .close {
+                        position: absolute;
+                        right: -0.5vw;
+                        top: -3vw;
+                        color: aliceblue;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: red;
+                        }
+                    }
+
+                    li {
+                        margin-top: 2vw;
+                        font-size: 1.2vw;
+                        transition: 400ms ease-in-out;
+
+                        a {
+                            color: rgb(199, 199, 244);
+
+                            &:hover {
+                                color: yellow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .center {
+            ::placeholder {
+                color: rgb(199, 199, 244);
+                opacity: 1;
+                padding-left: 3.5vw;
+            }
+
+            .inp {
+
+                border: none;
+                padding: 0.5vw 3vw;
+                border-radius: 5vw;
+                outline: none;
+                background-color: teal;
+                color: white;
+
+                &:hover {
+                    border: 2px solid skyblue;
+
+                    cursor: pointer;
+
+                }
+            }
+
+            .inp2 {
+                background-color: aliceblue;
+                color: black;
+            }
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 10vw;
+
+            .nightMode {
+                position: relative;
+                height: 1.5vw;
+                width: 3vw;
+                background-color: aliceblue;
+                border-radius: 5vw;
+                border: 2px solid blue;
+
+                .control {
+                    position: absolute;
+                    padding: 0.61vw;
+                    background-color: rgb(255, 125, 3);
+                    border-radius: 5vw;
+                    left: 0.01vw;
+                    cursor: pointer;
+                    transition: 1000ms all;
+                }
+
+                .nightClass {
+                    left: 1.47vw;
+                    background-color: rgb(8, 83, 149);
+                    transition: 1000ms all;
+                }
+            }
+
+            .icon {
+
+                color: rgb(199, 199, 244);
+                font-size: 2vw;
+                cursor: pointer;
+
+                &:hover {
+                    color: rgb(245, 229, 2);
+                }
+
+            }
+
+
+
+        }
+
+        .icon2 {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 10px;
+            color: rgba(108, 17, 254, 0.838);
+            font-size: 4vw;
+            z-index: 100;
+            cursor: pointer;
+
+        }
+
+        .active {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            left: 95vw;
+            color: rgba(107, 6, 6, 0.838);
+            font-size: 4vw;
+            z-index: 100;
+        }
+    }
+
+    .whiteMode {
+        background: linear-gradient(rgba(200, 0, 0), rgba(0, 0, 0, 0.3), rgba(200, 0, 0));
+    }
+
+    .sectionOne {
+        padding-top: 10vw;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(83, 125, 123);
+        transition: 1000ms ease-in-out;
+
+        .container {
+
+            text-align: center;
+            margin-top: 1vw;
+
+            .name {
+                margin-left: 5.5vw;
+                color: rgb(220, 211, 211);
+
+            }
+
+            h1 {
+                margin-left: 5.5vw;
+                color: rgb(227, 95, 0);
+            }
+
+            img {
+                height: 400px;
+                width: 400px;
+                object-fit: cover;
+                margin-left: 5.5vw;
+                border-radius: 1vw;
+            }
+        }
+
+
+    }
+
+    .nigthClass2 {
+        background-color: black;
+        color: white !important;
+    }
+}
+
+
+
+
+
+
+/* Responsive  */
+
+
+$Nest-HubMax: 1280px;
+
+@media (max-width: $Nest-HubMax) {
+    .sectionOne {
+        width: 100%;
+        padding-top: 10vw;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(83, 125, 123);
+        transition: 1000ms ease-in-out;
+
+    }
+
+    .sectionOne .container img {
+        height: 280px;
+        width: 280px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        margin-left: 8vw;
+        border-radius: 1vw;
+    }
+    .nigthClass2 {
+        background-color: black;
+        color: white !important;
+    }
+    .whiteMode {
+        background: linear-gradient(rgb(200, 0, 0), rgba(0, 0, 0, 0.3), rgb(200, 0, 0));
+    }
+}
+
+$Nest-Hub: 1024px;
+
+@media (max-width: $Nest-Hub) {
+    .sectionOne {
+        padding-top: 10vw;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(83, 125, 123);
+        transition: 1000ms ease-in-out;
+        padding-left: 8vw;
+    }
+    .nigthClass2 {
+        background-color: black;
+        color: white !important;
+    }
+    .whiteMode {
+        background: linear-gradient(rgb(200, 0, 0), rgba(0, 0, 0, 0.3), rgb(200, 0, 0));
+    }
+}
+$Surface-Pro: 912px;
+
+@media (max-width: $Surface-Pro) {
+    .header .left nav {
+        right: -35vw !important;
+        width: 30vw;
+        height: 220vw;
+        z-index: 10;
+    }
+    .header .left nav .H-ul li a {
+        font-size: 3vw;
+    }
+    .nigthClass2 {
+        background-color: black;
+        color: white !important;
+    }
+    .whiteMode {
+        background: linear-gradient(rgb(200, 0, 0), rgba(0, 0, 0, 0.3), rgb(200, 0, 0));
+    }
+}
+
+$iPad-Air: 820px;
+
+@media (max-width: $iPad-Air) {
+    .sectionOne {
+        padding-top: 10vw;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(83, 125, 123);
+        transition: 1000ms ease-in-out;
+        padding-left: 2vw;
+    }
+
+    .sectionOne .container img {
+        height: 300px;
+        width: 300px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        margin-left: 8vw;
+        border-radius: 1vw;
+    }
+
+
+    .header .left nav {
+        position: absolute;
+        top: 0;
+        right: -25vw !important;
+        width: 25vw;
+        background-color: black;
+        height: 145vw;
+        padding: 2vw 2vw;
+        transition: 1000ms all;
+    }
+
+    .header .icon2 {
+        position: fixed;
+        bottom: 0;
+        right: 10px;
+        color: rgba(212, 53, 9, 0.838);
+        font-size: 7vw;
+        z-index: 100;
+        cursor: pointer;
+    }
+    .nigthClass2 {
+        background-color: black;
+        color: white !important;
+    }
+    .whiteMode {
+        background: linear-gradient(rgb(200, 0, 0), rgba(0, 0, 0, 0.3), rgb(200, 0, 0));
+    }
+}
+
+
+
+$iPad-Air: 768px;
+
+@media (max-width: $iPad-Air) {
+    .sectionOne {
+        padding-top: 14vw;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(83, 125, 123);
+        transition: 1000ms ease-in-out;
+        padding-left: 2vw;
+    }
+
+    .sectionOne .container img {
+        height: 300px;
+        width: 300px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        margin-left: 6vw;
+        border-radius: 1vw;
+    }
+
+
+    .header .left nav {
+        position: absolute;
+        top: 0;
+        right: -35vw !important;
+        width: 25vw;
+        background-color: black;
+        height: 145vw;
+        padding: 2vw 2vw;
+        transition: 1000ms all;
+    }
+
+    .header .icon2 {
+        position: fixed;
+        bottom: 0;
+        right: 10px;
+        color: rgba(212, 53, 9, 0.838);
+        font-size: 7vw;
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    .header {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 12vw;
+        background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.3), rgb(0, 0, 0));
+        color: cornflowerblue;
+    }
+
+    .header .right .icon {
+        color: rgb(199, 199, 244);
+        font-size: 4vw;
+        cursor: pointer;
+    }
+
+    .header .left .logo {
+        font-size: 4vw;
+    }
+
+
+    .header .right .nightMode {
+        height: 2.5vw;
+        width: 5vw;
+    }
+    .header .right .nightMode .control{
+        padding: 1vw;
+    }
+    .header .right .nightMode .nightClass {
+        left: 2.5vw;
+        background-color: rgb(8, 83, 149);
+        transition: 1000ms all;
+    }
+    .nigthClass2 {
+        background-color: black;
+        color: white !important;
+    }
+    .whiteMode {
+        background: linear-gradient(rgb(200, 0, 0), rgba(0, 0, 0, 0.3), rgb(200, 0, 0));
+    }
+    .header .right {
+        width: 15vw;
+    }
+}
+
+$Surface: 540px;
+
+@media (max-width: $Surface) {
+    .sectionOne {
+        padding-left: 10vw;
+        padding-top: 24vw;
+    }
+    .header .right .nightMode .control{
+        left: 0%;
+    }
+    .sectionOne .container img {
+        height: 300px;
+        width: 400px;
+        margin-left: 3vw;
+    }
+    .header .right .nightMode .nightClass {
+        left: 3.4vw !important; 
+    }
+    .header{
+        height: 20vw;
+    }
+    .header .right .nightMode {
+        height: 3.7vw;
+        width: 7vw;
+    }
+    .header .right .nightMode .control {
+        left: 0%;
+        padding: 1.45vw;
+    }
+    .header .icon2 {
+        color: rgba(212, 53, 9, 0.838);
+        position: fixed;
+        font-size: 9vw;
+        position: fixed;
+        bottom: 2vw;
+        left: 92vw;
+       
+    }
+}
+
+
+$IphoneXr: 414px;
+
+@media (max-width: $IphoneXr) {
+    .sectionOne {
+        padding-left: 10vw;
+        padding-top: 32vw;
+    }
+    .header .right .nightMode .control{
+        left: 0%;
+    }
+    .sectionOne .container img {
+        height: 300px;
+        width: 300px;
+        margin-left: 3vw;
+    }
+    .header .right .nightMode .nightClass {
+        left: 2.6vw !important; 
+    }
+    .header .right .nightMode .control{
+        padding: 0.8vw;
+    }
+    .header .left nav {
+        right: -35vw !important;
+        width: 30vw;
+        height: 220vw;
+    }
+    .header .left nav .H-ul li a {
+        font-size: 4vw;
+    }
+    .header .right .nightMode .nightClass {
+        left: 3.4vw !important; 
+    }
+    .header{
+        height: 27vw;
+    }
+    .header .right .nightMode {
+        height: 3.7vw;
+        width: 7vw;
+    }
+    .header .right .nightMode .control {
+        left: 0%;
+        padding: 1.42vw;
+    }
+    .header .icon2 {
+        color: rgba(212, 53, 9, 0.838);
+        position: fixed;
+        font-size: 9vw;
+        position: fixed;
+        bottom: 2vw;
+        left: 93vw;
+       
+    }
+    
+}
+
+$mini: 280px;
+
+@media (max-width: $mini) {
+    .header .right .icon{
+        font-size: 5vw;
+    }
+    .sectionOne {
+       
+        padding-top: 50vw;
+    }
+    .sectionOne .container img {
+        height: 220px;
+        width: 220px;
+        margin-left: 0vw;
+    }
+    .header .center .inp {
+       width: 40vw;
+       height: 5vw;
+        padding: 0.5vw 3vw;
+    }
+    .header .left nav {
+        right: -35vw !important;
+        width: 30vw;
+        height: 250vw;
+    }
+    .header .left nav .H-ul li a {
+        font-size: 4vw;
+    }
+    .header .right .nightMode {
+        height: 5vw !important;
+        width: 9vw !important;
+    }
+    .header .right .nightMode .nightClass {
+        left: 3vw !important; 
+    }
+    .header .right .nightMode .control{
+        padding: 1.7vw !important;
+    }
+    .header .right .nightMode .nightClass {
+        left: 4.2vw !important; 
+    }
+    .header{
+        height: 40vw;
+    }
+    .header .right .nightMode {
+        height: 3.7vw;
+        width: 7vw;
+    }
+    .header .right .nightMode .control {
+        left: 0%;
+        padding: 1.45vw;
+    }
+    .header .icon2 {
+        color: rgba(212, 53, 9, 0.838);
+        position: fixed;
+        font-size: 9vw;
+        position: fixed;
+        bottom: 2vw;
+        left: 92vw;
+       
+    }
+    .header .left .logo{
+        font-size: 6vw;
+    }
+}
